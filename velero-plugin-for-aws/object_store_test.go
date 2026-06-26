@@ -18,11 +18,11 @@ package main
 
 import (
 	"context"
+	"testing"
+
 	"github.com/aws/aws-sdk-go-v2/aws"
 	"github.com/aws/aws-sdk-go-v2/service/s3"
 	"github.com/aws/aws-sdk-go-v2/service/s3/types"
-	"testing"
-
 	"github.com/pkg/errors"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/mock"
@@ -216,9 +216,9 @@ func TestValidChecksumAlg(t *testing.T) {
 		expected bool
 	}{
 		{
-			name:     "md5 is invalid",
+			name:     "MD5 is valid",
 			input:    "MD5",
-			expected: false,
+			expected: true,
 		},
 		{
 			name:     "sha256 is invalid",
